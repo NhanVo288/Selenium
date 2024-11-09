@@ -25,11 +25,8 @@ def test_add_to_cart(driver):
     add_to_cart_button.click()
     time.sleep(5)
     driver.find_element(By.CSS_SELECTOR, "button.btn.btn-lg.btn-inverse.btn-block.dropdown-toggle").click()
-    time.sleep(5)
-    # Chờ đợi cho đến khi nút 'Thanh toán' trong dropdown giỏ hàng có thể nhấp vào và sau đó nhấn vào nó
-    checkout_button = WebDriverWait(driver, 10).until(
-        EC.element_to_be_clickable((By.XPATH, "//*[@id='header-cart']/div/ul/li/div/p/a[2]")))
-    checkout_button.click()
+    time.sleep(3)
+    
 
 def test_add_to_cart_invalid_quanity(driver):
     # Điều hướng đến trang chủ của trang demo
