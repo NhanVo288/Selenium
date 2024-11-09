@@ -42,4 +42,25 @@ def test_add_to_cart_invalid_quanity(driver):
         EC.visibility_of_element_located((By.ID, "alert")))
     assert "Can not add to cart" in message.text
 
+def test_add_multiple_products_to_cart(driver):
+    # Điều hướng đến trang chủ của trang demo
+    driver.get("https://demo.opencart.com/")
+    # Chờ 10 giây để đảm bảo trang được tải hoàn toàn
+    time.sleep(10)
+    
+    # Define the XPaths for the 'Add to Cart' buttons for each product
+    product_buttons = [
+        "//*[@id='content']/div[2]/div[1]/div/div[2]/form/div/button[1]",  # MacBook
+        "//*[@id='content']/div[2]/div[2]/div/div[2]/form/div/button[1]"  # iPhone  
+    ]
+    
+    # Loop through each product button XPath and click it
+    for button_xpath in product_buttons:
+        add_to_cart_button = WebDriverWait(driver, 10).until(
+            EC.element_to_be_clickable((By.XPATH, button_xpath)))
+        add_to_cart_button.click()
+        time.sleep(3)  # Wait for the cart to update
+
+   
+
     
