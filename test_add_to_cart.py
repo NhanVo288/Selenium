@@ -33,14 +33,13 @@ def test_add_to_cart_invalid_quanity(driver):
     driver.get("https://demo.opencart.com/")
     # Chờ 10 giây để đảm bảo trang được tải hoàn toàn
     time.sleep(10)
-    # Chờ đợi cho đến khi nút 'Thêm vào giỏ hàng' có thể nhấp vào và sau đó nhấn vào nó
-    add_to_cart_button = WebDriverWait(driver, 10).until(
-        EC.element_to_be_clickable((By.XPATH, "//*[@id='content']/div[2]/div[1]/div/div[2]/form/div/button[1]")))
-    add_to_cart_button.click()
-    time.sleep(5)
-    driver.find_element(By.CSS_SELECTOR, "button.btn.btn-lg.btn-inverse.btn-block.dropdown-toggle").click()
-    time.sleep(5)
-    # Chờ đợi cho đến khi nút 'Thanh toán' trong dropdown giỏ hàng có thể nhấp vào và sau đó nhấn vào nó
-    checkout_button = WebDriverWait(driver, 10).until(
-        EC.element_to_be_clickable((By.XPATH, "//*[@id='header-cart']/div/ul/li/div/p/a[2]")))
-    checkout_button.click()
+    driver.find_element(By.XPATH, "//*[@id='content']/div[2]/div[1]/div/div[1]/a").click()
+    time.sleep(4)
+    driver.find_element(By.NAME,"quantity").send_keys('asdasd')
+    time.sleep(3)
+    driver.find_element(By.ID,"button-cart").click()
+    message = WebDriverWait(driver, 5).until(
+        EC.visibility_of_element_located((By.ID, "alert")))
+    assert "Can not add to cart" in message.text
+
+    
