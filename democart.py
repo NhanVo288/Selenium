@@ -132,7 +132,7 @@ def test_data_validation(driver):
     print("Tất cả dữ liệu sản phẩm MacBook đã được xác thực thành công!")
 
 # Test thêm vào giỏ hàng và thanh toán
-def test_add_to_cart_and_checkout(driver):
+def test_add_to_cart(driver):
     # Điều hướng đến trang chủ của trang demo
     driver.get("https://demo.opencart.com/")
     # Chờ 10 giây để đảm bảo trang được tải hoàn toàn
