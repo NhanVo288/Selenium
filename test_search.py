@@ -81,7 +81,7 @@ def test_search_case_insensitivity(driver):
     time.sleep(5)
 
 # Test tìm kiếm với kí tự đặc biệt 
-def test_search_special_characters_and_emojis(driver):
+def test_search_special_characters(driver):
     driver.get("https://demo.opencart.com/")
     time.sleep(10)
     search_box = driver.find_element(By.NAME, "search")
