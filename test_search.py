@@ -25,8 +25,8 @@ def test_search_valid_functionality(driver):
     search_button = WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable((By.CSS_SELECTOR, "button.btn.btn-light.btn-lg")))
     search_button.click()
-    # Kiểm tra xem tiêu đề trang có chứa từ khóa tìm kiếm không, để xác nhận rằng trang tìm kiếm đã được tải đúng
-    assert "Search - Iphone" in driver.title
+    name = driver.find_element(By.XPATH,"//*[@id='product-list']/div/div/div[2]/div/h4/a")
+    assert name.text == "iPhone" # Kiểm tra xem có sản phẩm liên quan không
 
 # Test tìm kiếm sản phẩm không hợp lệ
 def test_search_invalid_functionality(driver):
