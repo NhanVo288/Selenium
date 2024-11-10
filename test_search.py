@@ -20,7 +20,7 @@ def test_search_valid_functionality(driver):
     time.sleep(10)
     # Tìm kiếm hộp nhập liệu tìm kiếm và nhập từ khóa "Iphone"
     search_box = driver.find_element(By.NAME, "search")
-    search_box.send_keys("Iphone")
+    search_box.send_keys("iPhone")
     # Chờ đợi cho đến khi nút tìm kiếm trở nên có thể nhấp vào và thực hiện hành động click
     search_button = WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable((By.CSS_SELECTOR, "button.btn.btn-light.btn-lg")))
