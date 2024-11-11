@@ -1,5 +1,3 @@
-#### Hướng Dẫn Thiết Lập Môi Trường và Chạy Testing Selenium với Edge
-
 ## Giới Thiệu
 
 Tệp hướng dẫn này mô tả cách thiết lập môi trường để chạy các kịch bản kiểm thử tự động hóa bằng **Selenium** và **Microsoft Edge**, sử dụng **pytest** làm framework kiểm thử. Bạn sẽ học cách cài đặt các công cụ cần thiết, cấu hình WebDriver cho trình duyệt Edge, và cách chạy các bài kiểm tra.
