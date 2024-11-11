@@ -79,6 +79,8 @@ def test_search_case_insensitivity(driver):
         EC.element_to_be_clickable((By.CSS_SELECTOR, "button.btn.btn-light.btn-lg")))
     search_button.click()
     time.sleep(5)
+    name = driver.find_element(By.XPATH,"//*[@id='product-list']/div/div/div[2]/div/h4/a")
+    assert name.text == "iPhone" # Kiểm tra xem có sản phẩm liên quan không
 
 # Test tìm kiếm với kí tự đặc biệt 
 def test_search_special_characters(driver):
