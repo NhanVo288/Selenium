@@ -15,7 +15,7 @@ def driver():
 
 # Test điều hướng trang
 def test_navigation(driver):
-    driver.get("https://demo.opencart.com/home")
+    driver.get("https://demo-opencart.com/home")
     time.sleep(10)
     about_us_link = WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable((By.LINK_TEXT, "About Us")))

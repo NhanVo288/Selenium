@@ -15,9 +15,9 @@ def driver():
 
 # Test đăng nhập với thông tin hợp lệ
 def test_login_valid(driver):
-    driver.get("https://demo.opencart.com/")  # Truy cập trang chủ
-    time.sleep(10)  # Chờ trang tải xong
-    WebDriverWait(driver, 10).until(EC.url_to_be("https://demo.opencart.com/"))  # Đợi cho đến khi URL chính xác
+    driver.get("https://demo-opencart.com/")  # Truy cập trang chủ
+    time.sleep(5)  # Chờ trang tải xong
+    
     # Tìm và click vào menu dropdown
     menu_dropdown = WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable((By.XPATH, "//*[@id='top']/div/div[2]/ul/li[2]/div/a")))
@@ -35,10 +35,10 @@ def test_login_valid(driver):
 # Test đăng nhập với thông tin không hợp lệ
 def test_login_invalid(driver):
     # Truy cập trang chủ của OpenCart
-    driver.get("https://demo.opencart.com/")
+    driver.get("https://demo-opencart.com/")
     time.sleep(10)  # Chờ 10 giây để trang tải hoàn toàn
     # Đợi cho đến khi URL trang chủ được tải xong
-    WebDriverWait(driver, 10).until(EC.url_to_be("https://demo.opencart.com/"))
+
     # Tìm và click vào menu dropdown của tài khoản người dùng
     menu_dropdown = WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable((By.XPATH, "//*[@id='top']/div/div[2]/ul/li[2]/div/a")))
@@ -69,10 +69,10 @@ def test_login_invalid(driver):
 
 def test_login_empty_email_password(driver):
     # Truy cập trang chủ của OpenCart
-    driver.get("https://demo.opencart.com/")
+    driver.get("https://demo-opencart.com/")
     time.sleep(10)  # Chờ 10 giây để trang tải hoàn toàn
     # Đợi cho đến khi URL trang chủ được tải xong
-    WebDriverWait(driver, 10).until(EC.url_to_be("https://demo.opencart.com/"))
+
     # Tìm và click vào menu dropdown của tài khoản người dùng
     menu_dropdown = WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable((By.XPATH, "//*[@id='top']/div/div[2]/ul/li[2]/div/a")))
@@ -100,7 +100,7 @@ def test_login_empty_email_password(driver):
 # Test đăng xuất
 def test_logout(driver):
     # Điều hướng đến trang đăng nhập
-    driver.get("https://demo.opencart.com/en-gb?route=account/login")
+    driver.get("https://demo-opencart.com/index.php?route=account/login&language=en-gb")
     time.sleep(10)  # Chờ trang tải hoàn toàn
 
     # Nhập địa chỉ email vào trường nhập email

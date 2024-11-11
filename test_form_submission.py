@@ -16,7 +16,7 @@ def driver():
 # Test gửi form với thông tin không hợp lệ và hợp lệ
 def test_form_submission(driver):
     # Điều hướng đến trang đăng nhập
-    driver.get("https://demo.opencart.com/en-gb?route=account/register")
+    driver.get("https://demo-opencart.com/index.php?route=account/register&language=en-gb")
     time.sleep(10)  # Chờ trang tải hoàn toàn
 
     # Nhập thông tin không hợp lệ

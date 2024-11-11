@@ -15,7 +15,7 @@ def driver():
 
 # Test xác thực dữ liệu sản phẩm
 def test_data_validation(driver):
-    driver.get("https://demo.opencart.com/home")
+    driver.get("https://demo-opencart.com/home")
     time.sleep(10)
     macbook_element = WebDriverWait(driver, 10).until(
         EC.visibility_of_element_located((By.XPATH, "//a[text()='MacBook']")))

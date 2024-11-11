@@ -16,7 +16,7 @@ def driver():
 
 def test_add_to_cart(driver):
     # Điều hướng đến trang chủ của trang demo
-    driver.get("https://demo.opencart.com/")
+    driver.get("https://demo-opencart.com/")
     # Chờ 10 giây để đảm bảo trang được tải hoàn toàn
     time.sleep(10)
     # Chờ đợi cho đến khi nút 'Thêm vào giỏ hàng' có thể nhấp vào và sau đó nhấn vào nó
@@ -30,7 +30,7 @@ def test_add_to_cart(driver):
 
 def test_add_to_cart_invalid_quanity(driver):
     # Điều hướng đến trang chủ của trang demo
-    driver.get("https://demo.opencart.com/")
+    driver.get("https://demo-opencart.com/")
     # Chờ 10 giây để đảm bảo trang được tải hoàn toàn
     time.sleep(10)
     driver.find_element(By.XPATH, "//*[@id='content']/div[2]/div[1]/div/div[1]/a").click()
@@ -44,7 +44,7 @@ def test_add_to_cart_invalid_quanity(driver):
 
 def test_add_multiple_products_to_cart(driver):
     # Điều hướng đến trang chủ của trang demo
-    driver.get("https://demo.opencart.com/")
+    driver.get("https://demo-opencart.com/")
     # Chờ 10 giây để đảm bảo trang được tải hoàn toàn
     time.sleep(10)
     
