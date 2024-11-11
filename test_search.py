@@ -20,13 +20,13 @@ def test_search_valid_functionality(driver):
     time.sleep(10)
     # Tìm kiếm hộp nhập liệu tìm kiếm và nhập từ khóa "Iphone"
     search_box = driver.find_element(By.NAME, "search")
-    search_box.send_keys("MacBook")
+    search_box.send_keys("iPhone")
     # Chờ đợi cho đến khi nút tìm kiếm trở nên có thể nhấp vào và thực hiện hành động click
     search_button = WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable((By.CSS_SELECTOR, "button.btn.btn-light.btn-lg")))
     search_button.click()
     name = driver.find_element(By.XPATH,"//*[@id='product-list']/div/div/div[2]/div/h4/a")
-    assert name.text == "MacBook" # Kiểm tra xem có sản phẩm liên quan không
+    assert name.text == "iPhone" # Kiểm tra xem có sản phẩm liên quan không
 
 # Test tìm kiếm sản phẩm không hợp lệ
 def test_search_invalid_functionality(driver):
@@ -62,25 +62,25 @@ def test_search_partial_match_keyword(driver):
     driver.get("https://demo.opencart.com/")
     time.sleep(10)
     search_box = driver.find_element(By.NAME, "search")
-    search_box.send_keys("Mac")  # Nhập từ khóa là một phần của sản phẩm có sẵn
+    search_box.send_keys("Phone")  # Nhập từ khóa là một phần của sản phẩm có sẵn
     search_button = WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable((By.CSS_SELECTOR, "button.btn.btn-light.btn-lg")))
     search_button.click()
     name = driver.find_element(By.XPATH,"//*[@id='product-list']/div/div/div[2]/div/h4/a")
-    assert name.text == "MacBook" # Kiểm tra xem có sản phẩm liên quan không
+    assert name.text == "iPhone" # Kiểm tra xem có sản phẩm liên quan không
 
 # Test tìm kiếm với từ khóa có chữ hoa, chữ thường
 def test_search_case_insensitivity(driver):
     driver.get("https://demo.opencart.com/")
     time.sleep(10)
     search_box = driver.find_element(By.NAME, "search")
-    search_box.send_keys("MACBOOK")  # Nhập từ khóa bằng chữ hoa
+    search_box.send_keys("IPHONE")  # Nhập từ khóa bằng chữ hoa
     search_button = WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable((By.CSS_SELECTOR, "button.btn.btn-light.btn-lg")))
     search_button.click()
     time.sleep(5)
     name = driver.find_element(By.XPATH,"//*[@id='product-list']/div/div/div[2]/div/h4/a")
-    assert name.text == "MacBook" # Kiểm tra xem có sản phẩm liên quan không
+    assert name.text == "iPhone" # Kiểm tra xem có sản phẩm liên quan không
 
 # Test tìm kiếm với kí tự đặc biệt 
 def test_search_special_characters(driver):
