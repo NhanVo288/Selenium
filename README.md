@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/abd53ba7-206f-44bb-84b6-59f5f4a936b8)﻿# Hướng Dẫn Thiết Lập Môi Trường và Chạy Kịch Bản Selenium với Edge
+##﻿# Hướng Dẫn Thiết Lập Môi Trường và Chạy Testing Selenium với Edge
 
 ## Giới Thiệu
 
