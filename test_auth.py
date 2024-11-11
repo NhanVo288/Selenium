@@ -107,7 +107,7 @@ def test_logout(driver):
     driver.find_element(By.NAME, "email").send_keys("nhan123@gmail.com")
     # Nhập mật khẩu vào trường nhập mật khẩu
     driver.find_element(By.NAME, "password").send_keys("123456")
-
+    time.sleep(3)
     # Tìm và nhấn nút đăng nhập để gửi biểu mẫu đăng nhập
     submit_button = driver.find_element(By.CSS_SELECTOR, "button.btn.btn-primary")
     submit_button.click()
